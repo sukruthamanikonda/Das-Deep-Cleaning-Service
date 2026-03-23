@@ -1,43 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Das Deep Cleaning Service — Professional Home & Office Cleaning</title>
+  <meta name="description"
+    content="Das Deep Cleaning Service offers professional deep cleaning services in Bengaluru — kitchen, bathroom, sofa, carpet, chimney, mattress cleaning. Book online or get a free quote." />
+  <meta name="keywords"
+    content="deep cleaning, home cleaning, office cleaning, sofa cleaning, carpet cleaning, kitchen cleaning, Bengaluru, das deep cleaning" />
+  <link rel="canonical" href="https://www.dasdeepcleaning.in/" />
+  <meta name="robots" content="index,follow" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Das Deep Cleaning Service" />
+  <meta property="og:description"
+    content="Professional deep cleaning services in Bengaluru — kitchen, bathroom, sofa, carpet & more. Book now." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.dasdeepcleaning.in/" />
+  <meta property="og:image" content="/images/og-image.jpg" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Das Deep Cleaning Service" />
+  <meta name="twitter:description"
+    content="Professional deep cleaning services in Bengaluru — kitchen, bathroom, sofa, carpet & more. Book now." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#4f46e5', // Indigo 600
+              dark: '#3730a3', // Indigo 800
+              light: '#e0e7ff', // Indigo 100
+              superlight: '#eef2ff'
+            },
+            secondary: '#0f172a', // Slate 900
+            accent: '#ec4899', // Pink 500
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+    }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .text-shadow {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .clip-slant {
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+  <!-- JSON-LD structured data for LocalBusiness -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Das Deep Cleaning Service",
+        "image": ["/images/og-image.jpg"],
+        "@id": "https://www.dasdeepcleaning.in/",
+        "url": "https://www.dasdeepcleaning.in/",
+        "telephone": "+919101043385",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "10/1, 1st cross, 1st main road, kamla nagar market, Shakti Ganapathi nagar, Basaveswara nagar",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "KA",
+          "postalCode": "560079",
+          "addressCountry": "IN"
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }],
+        "priceRange": "₹₹",
+        "sameAs": []
+      }
+    </script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>
