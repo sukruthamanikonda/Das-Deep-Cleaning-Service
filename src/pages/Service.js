@@ -102,6 +102,19 @@ export default function Services({ navigate }) {
       timestamp: Date.now()
     };
 
+    // Construct WhatsApp message with booking details
+    const whatsappNumber = CONTACT_PHONE.replace(/[^0-9]/g, '');
+    const message = `*New Booking Request*%0A%0A` +
+      `*Service:* ${selectedService.title}%0A` +
+      `*Property:* ${bookingForm.propertyType} (${bookingForm.bhkCategory})%0A` +
+      `*Name:* ${bookingForm.name}%0A` +
+      `*Phone:* ${bookingForm.phone}%0A` +
+      `*Date:* ${bookingForm.date}%0A` +
+      `*Address:* ${bookingForm.address}%0A%0A` +
+      `*Total Price Estimate:* ${selectedService.priceDescription}`;
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
     try {
       const requestBody = JSON.stringify({
         items: [newBookingItem],
@@ -126,29 +139,14 @@ export default function Services({ navigate }) {
         throw new Error('Server rejected booking');
       }
 
-      // Construct WhatsApp message with booking details
-      const whatsappNumber = CONTACT_PHONE.replace(/[^0-9]/g, '');
-      const message = `*New Booking Request*%0A%0A` +
-        `*Service:* ${selectedService.title}%0A` +
-        `*Property:* ${bookingForm.propertyType} (${bookingForm.bhkCategory})%0A` +
-        `*Name:* ${bookingForm.name}%0A` +
-        `*Phone:* ${bookingForm.phone}%0A` +
-        `*Date:* ${bookingForm.date}%0A` +
-        `*Address:* ${bookingForm.address}%0A%0A` +
-        `*Total Price Estimate:* ${selectedService.priceDescription}`;
-
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
-
-      // Open WhatsApp in a new tab
-      window.open(whatsappUrl, '_blank');
-
-      // Navigate to success page
-      navigate('success');
-      closeBooking();
     } catch (err) {
       console.error('Booking failed:', err);
-      // Fallback local save if server fails (optional, but keeping existing logic structure)
-      alert(`Booking saved locally due to an error.\n${err.message}`);
+      // Backend failed, but we still proceed to WhatsApp
+      alert(`Our database is temporarily down or offline. But don't worry, you are being redirected to WhatsApp to complete your booking!`);
+    } finally {
+      // Regardless of backend success/failure, open WhatsApp and show success
+      window.open(whatsappUrl, '_blank');
+      navigate('success');
       closeBooking();
     }
   };
