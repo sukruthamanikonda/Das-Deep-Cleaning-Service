@@ -20,6 +20,7 @@ const corsOptions = {
         'http://localhost:5173',
         'https://hygienixdeepcleaning.in',
         'https://www.hygienixdeepcleaning.in',
+        'https://dasdeepcleaning.vercel.app',
     ],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
