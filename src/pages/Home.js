@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  User, CheckCircle, Star, MapPin,
+  CheckCircle, Star, MapPin,
   ArrowRight, Home, Building2, Droplets, X, Phone
 } from 'lucide-react';
 import { Button, SectionTitle, BeforeAfterCard } from '../component/Shared';
