@@ -141,8 +141,7 @@ export default function Services({ navigate }) {
 
     } catch (err) {
       console.error('Booking failed:', err);
-      // Backend failed, but we still proceed to WhatsApp
-      alert(`Our database is temporarily down or offline. But don't worry, you are being redirected to WhatsApp to complete your booking!`);
+      // Backend failed, but we still proceed to WhatsApp silently
     } finally {
       // Regardless of backend success/failure, open WhatsApp and show success
       window.open(whatsappUrl, '_blank');
